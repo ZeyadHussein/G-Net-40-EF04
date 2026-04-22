@@ -93,6 +93,20 @@ namespace EF04
 
             #endregion
 
+            #region Question 3: Update Account Status
+
+            var ca = context.CustomerAccounts.FirstOrDefault();
+
+            if (ca != null)
+            {
+                ca.AccountStatus = ca.AccountStatus == "Active" ? "Closed" : "Active";
+                context.SaveChanges();
+
+                Console.WriteLine("Q3 Done: Account Status Updated");
+            }
+
+            #endregion
+
 
         }
     }
