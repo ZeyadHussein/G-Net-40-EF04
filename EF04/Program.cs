@@ -106,7 +106,19 @@ namespace EF04
             }
 
             #endregion
+            #region Question 4: Remove Account from Customer
 
+            var remove = context.CustomerAccounts.FirstOrDefault();
+
+            if (remove != null)
+            {
+                context.CustomerAccounts.Remove(remove);
+                context.SaveChanges();
+
+                Console.WriteLine("Q4 Done: Relationship Removed");
+            }
+
+            #endregion
 
         }
     }
